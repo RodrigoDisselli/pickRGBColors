@@ -2,35 +2,10 @@
     position: absolute;
     right: 10%;
     font-size: 55px;
-    top: 70px;
+    top: 40px;
     color: white;
     z-index: 13;
     font-family: sans-serif;
-}
-
-.button-prefab{
-    width: 20%;
-    height: 50px;
-    background-color:  #3d958a;
-    border: none;
-    padding: 5px;
-    color: white;
-    display: inline-block;
-    font-size: 16px;
-    margin: 0px;
-}
-
-.button-prefab:hover{
-    background-color:  #216961;
-}
-
-.menu{
-    position: absolute;
-    width: 80%;
-    top: 140px;
-    z-index: 12;
-    right: 0%;
-    
 }
 
 #cube1{
