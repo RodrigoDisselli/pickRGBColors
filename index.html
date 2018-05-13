@@ -3,38 +3,60 @@
 <head>
     <meta http-equiv="content-type" content="application/vnd.ms-excel" charset="UTF-8">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="headLook.css">
-    <link rel="stylesheet" href="bodyLook.css">
+    <link rel="stylesheet" href="indexStyle.css">
     <title>PickRGB</title>
     <link rel="shortcut icon" href="icon.png" type="image/png">
-
-
 </head>
-<body>
-    <header class="titulo">
-    <h1 class="nome">PickRGB Colors</h1>
-    <div class="art">
-        <div id="cube1"></div>
-        <div id="cube2"></div>
-        <div id="cube3"></div>
-        <div id="cube4"></div>
-        <div id="cube5"></div>
-        <div id="cube6"></div>
-        <div id="cube7"></div>
-        <div id="cube8"></div>
-        <div id="cube9"></div>
-        <div id="cube10"></div>
-        <div id="cube11"></div>
-        <div id="cube12"></div>
-        <div id="cube13"></div>
-        <div id="cube14"></div>
-        <div id="cube15"></div>
-        <div id="cube16"></div>
-    </div>   
-    </header>
+<body id="background">
     <div class="body">
+        <div class="center-palette">
+            <div class="palette">
+                <button onClick="colorEffect(45, 197, 173)" class="c" id="c0"></button>
+                <button onClick="colorEffect(45, 173, 152)" class="c" id="c1"></button>
+                <button onClick="colorEffect(45, 210, 135)" class="c" id="c2"></button>
+                <button onClick="colorEffect(45, 185, 118)" class="c" id="c3"></button>
+                <button onClick="colorEffect(54, 168, 224)" class="c" id="c4"></button>
+                <button onClick="colorEffect(41, 146, 196)" class="c" id="c5"></button>
+                <button onClick="colorEffect(175, 112, 193)" class="c" id="c6"></button>
+                <button onClick="colorEffect(164, 91, 185)" class="c" id="c7"></button>
+                <button onClick="colorEffect(245, 206, 45)" class="c" id="c8"></button>
+                <button onClick="colorEffect(249, 173, 41)" class="c" id="c9"></button>
+                <button onClick="colorEffect(239, 147, 53)" class="c" id="c10"></button>
+                <button onClick="colorEffect(224, 107, 16)" class="c" id="c11"></button>
+                <button onClick="colorEffect(242, 101, 78)" class="c" id="c12"></button>
+                <button onClick="colorEffect(209, 80, 58)" class="c" id="c13"></button>
+                <button onClick="colorEffect(255, 255, 255)" class="c" id="c14"></button>
+                <button onClick="colorEffect(201, 206, 209)" class="c" id="c15"></button>
+                <button onClick="colorEffect(165, 180, 181)" class="c" id="c16"></button>
+                <button onClick="colorEffect(145, 157, 158)" class="c" id="c17"></button>
+                <button onClick="colorEffect(66, 91, 113)" class="c" id="c18"></button>
+                <button onClick="colorEffect(56, 79, 98)" class="c" id="c19"></button>
+            </div>
+        </div>
+
+            <div class="text" id="text-box">
+                    <div class="sample-box">
+                        <div class="sample" id="color-rgb"></div>
+                        <input type="text" class="get-rgb" placeholder="empty" id="print-rgb">
+                        <button onclick="copyRGB()" class="button" id="copy-button">Copy</button>
+                    </div>
+                    <div class="box-get-rgb">
+                        <input class="get-rgb" type="text" id="input0" placeholder="R:" value=255>
+                        <input class="get-rgb" type="text" id="input1" placeholder="G:" value=255>
+                        <input class="get-rgb" type="text" id="input2" placeholder="B:" value=255>
+                        <button onclick="callByIndex()" class="button" id="input3">OK</button>
+                    </div>
+            </div>
+
+            <div class="slide-bar">
+                <input class="color-slider" id="slider-red" type="range" min="1.1" max="5" value="1.1" step="0.1" onchange="callBySliderRed(this.value)">
+                <input class="color-slider" id="slider-green" type="range" min="1.1" max="5" value="1.1" step="0.1" onchange="callBySliderGreen(this.value)">
+                <input class="color-slider" id="slider-blue" type="range" min="1.1" max="5" value="1.1" step="0.1" onchange="callBySliderBlue(this.value)">
+            </div>
+
         <div class="design-center">
             <div class="flower">
+                <div onclick="printColor(0)" class="color" id="color0"></div>
                 <div onclick="printColor(1)" class="color" id="color1"></div>
                 <div onclick="printColor(2)" class="color" id="color2"></div>
                 <div onclick="printColor(3)" class="color" id="color3"></div>
@@ -42,40 +64,13 @@
                 <div onclick="printColor(5)" class="color" id="color5"></div>
                 <div onclick="printColor(6)" class="color" id="color6"></div>
                 <div onclick="printColor(7)" class="color" id="color7"></div>
-                <div onclick="printColor(8)" class="color" id="color8"></div>
             </div>
-            <div class="text">
-                <h4 class="print" disabled id="print-rgb"></h4>
-                <div class="sample" id="color-rgb"></div>
-            </div>
-            <div class="design-palette">
-            <div class="palette">
-                <button onClick=colorButton(0) class="c" id="c0"></button>
-                <button onClick=colorButton(1) class="c" id="c1"></button>
-                <button onClick=colorButton(2) class="c" id="c2"></button>
-                <button onClick=colorButton(3) class="c" id="c3"></button>
-                <button onClick=colorButton(4) class="c" id="c4"></button>
-                <button onClick=colorButton(5) class="c" id="c5"></button>
-                <button onClick=colorButton(6) class="c" id="c6"></button>
-                <button onClick=colorButton(7) class="c" id="c7"></button>
-                <button onClick=colorButton(8) class="c" id="c8"></button>
-                <button onClick=colorButton(9) class="c" id="c9"></button>
-                <button onClick=colorButton(10) class="c" id="c10"></button>
-                <button onClick=colorButton(11) class="c" id="c11"></button>
-                <button onClick=colorButton(12) class="c" id="c12"></button>
-                <button onClick=colorButton(13) class="c" id="c13"></button>
-                <button onClick=colorButton(14) class="c" id="c14"></button>
-                <button onClick=colorButton(15) class="c" id="c15"></button>
-                <button onClick=colorButton(16) class="c" id="c16"></button>
-                <button onClick=colorButton(17) class="c" id="c17"></button>
-                <button onClick=colorButton(18) class="c" id="c18"></button>
-                <button onClick=colorButton(19) class="c" id="c19"></button>
-            </div>
-            </div>   
+             
         </div>
         <div class="design-center-rgb"></div>
             <div class="center">
                 <div class="flower-r">
+                    <div onClick=colorR(0) class="color-rgb" id="color0-r"></div>
                     <div onClick=colorR(1) class="color-rgb" id="color1-r"></div>
                     <div onClick=colorR(2) class="color-rgb" id="color2-r"></div>
                     <div onClick=colorR(3) class="color-rgb" id="color3-r"></div>
@@ -83,19 +78,10 @@
                     <div onClick=colorR(5) class="color-rgb" id="color5-r"></div>
                     <div onClick=colorR(6) class="color-rgb" id="color6-r"></div>
                     <div onClick=colorR(7) class="color-rgb" id="color7-r"></div>
-                    <div onClick=colorR(8) class="color-rgb" id="color8-r"></div>
                 </div>
-                <div class="flower-g">
-                    <div onClick=colorG(1) class="color-rgb" id="color1-g"></div>
-                    <div onClick=colorG(2) class="color-rgb" id="color2-g"></div>
-                    <div onClick=colorG(3) class="color-rgb" id="color3-g"></div>
-                    <div onClick=colorG(4) class="color-rgb" id="color4-g"></div>
-                    <div onClick=colorG(5) class="color-rgb" id="color5-g"></div>
-                    <div onClick=colorG(6) class="color-rgb" id="color6-g"></div>
-                    <div onClick=colorG(7) class="color-rgb" id="color7-g"></div>
-                    <div onClick=colorG(8) class="color-rgb" id="color8-g"></div>
-                </div>
+                
                 <div class="flower-b">
+                    <div onClick=colorB(0) class="color-rgb" id="color0-b"></div>
                     <div onClick=colorB(1) class="color-rgb" id="color1-b"></div>
                     <div onClick=colorB(2) class="color-rgb" id="color2-b"></div>
                     <div onClick=colorB(3) class="color-rgb" id="color3-b"></div>
@@ -103,7 +89,18 @@
                     <div onClick=colorB(5) class="color-rgb" id="color5-b"></div>
                     <div onClick=colorB(6) class="color-rgb" id="color6-b"></div>
                     <div onClick=colorB(7) class="color-rgb" id="color7-b"></div>
-                    <div onClick=colorB(8) class="color-rgb" id="color8-b"></div>
+                </div>
+            </div>
+            <div class="center-g">
+                <div class="flower-g">
+                    <div onClick=colorG(0) class="color-rgb" id="color0-g"></div>
+                    <div onClick=colorG(1) class="color-rgb" id="color1-g"></div>
+                    <div onClick=colorG(2) class="color-rgb" id="color2-g"></div>
+                    <div onClick=colorG(3) class="color-rgb" id="color3-g"></div>
+                    <div onClick=colorG(4) class="color-rgb" id="color4-g"></div>
+                    <div onClick=colorG(5) class="color-rgb" id="color5-g"></div>
+                    <div onClick=colorG(6) class="color-rgb" id="color6-g"></div>
+                    <div onClick=colorG(7) class="color-rgb" id="color7-g"></div>
                 </div>
             </div>
         </div>
@@ -116,7 +113,7 @@
     <script>
         
     </script>
-    <script src="indexJSCode.js"></script>
+    <script src="indexJS.js"></script>
 
 </body>
 </html>
